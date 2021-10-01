@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left mt-2">
-                    <h3 align="center">SISTEM INVENTORY SEKOLAH</h3>
+                    <h3 align="center">SISTEM INVENTORY SDN GEJUGJATI 2</h3>
                     <h3 align="center">LAPORAN DATA BARANG</h3>
                 </div>
                 <br>
