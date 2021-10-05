@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\KategoriExport;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use Maatwebsite\Excel\Facades\Excel;
 use RealRashid\SweetAlert\Facades\Alert;
 use PDF;
 
@@ -140,5 +142,10 @@ class KategoriController extends Controller
         $kategori = Kategori::all();
         $pdf = PDF::loadview('Kategori.laporan', compact('kategori'));
         return $pdf->stream();
+    }
+
+    public function laporanExcel(Request $request)
+    {
+        return Excel::download(new KategoriExport, 'kategoriBarang.xlsx');
     }
 }

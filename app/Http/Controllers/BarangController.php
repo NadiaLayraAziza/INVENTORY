@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\BarangExport;
 use App\Models\Barang;
 use App\Models\Kategori;
 use App\Models\Supplier;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
+use Maatwebsite\Excel\Facades\Excel;
 use RealRashid\SweetAlert\Facades\Alert;
 use PDF;
 
@@ -248,5 +250,10 @@ class BarangController extends Controller
         $supplier = Supplier::all();
         $pdf = PDF::loadview('Barang.laporan', compact('barang', 'kategori', 'supplier'));
         return $pdf->stream();
+    }
+
+    public function laporanExcel(Request $request)
+    {
+        return Excel::download(new BarangExport, 'Barang.xlsx');
     }
 }

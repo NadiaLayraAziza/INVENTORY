@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\UserExport;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Hash;
+use Maatwebsite\Excel\Facades\Excel;
 use RealRashid\SweetAlert\Facades\Alert;
 use PDF;
 class UserController extends Controller
@@ -179,6 +181,11 @@ class UserController extends Controller
         $user = User::all();
         $pdf = PDF::loadview('User.laporan', compact('user'));
         return $pdf->stream();
+    }
+
+    public function laporanExcel(Request $request)
+    {
+        return Excel::download(new UserExport, 'User.xlsx');
     }
 
     public function EditPassword($id)

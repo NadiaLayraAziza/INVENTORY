@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\BarangMasukExport;
 use App\Models\Barang;
 use App\Models\BarangKeluar;
 use App\Models\BarangMasuk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use Maatwebsite\Excel\Facades\Excel;
 use RealRashid\SweetAlert\Facades\Alert;
 use PDF;
 
@@ -201,5 +203,10 @@ class BarangMasukController extends Controller
         $masuk = BarangMasuk::all();
         $pdf = PDF::loadview('BarangMasuk.laporan', compact('masuk'));
         return $pdf->stream();
+    }
+
+    public function laporanExcel(Request $request)
+    {
+        return Excel::download(new BarangMasukExport, 'BarangMasuk.xlsx');
     }
 }

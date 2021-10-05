@@ -16,9 +16,14 @@
                 </nav>
             </div>
             <div class="col-md-6 col-sm-12 text-right">
-                <a class="btn btn-primary" href="{{ url('/laporan/BarangMasuk') }}">
+                <a href="#" type="button" class="btn btn-primary" data-toggle="dropdown" data-color="#ffffff">
+                    <i class="icon-copy fa fa-download" aria-hidden="true"></i>
                     Download Laporan
                 </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{{url('/laporan/BarangMasuk')}}">PDF</a>
+                    <a class="dropdown-item" href="{{url('/laporan/BarangMasuk/excel')}}">Excel</a>
+                </div>
             </div>
         </div>
     </div>

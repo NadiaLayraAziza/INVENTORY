@@ -29,7 +29,9 @@
                         <th>ID Barang</th>
                         <th>Kategori</th>
                         <th>Nama Barang</th>
+                        <th>Merk Barang</th>
                         <th>Jumlah</th>
+                        <th>Harga</th>
                         <th>Supplier</th>
                     </tr>
                     @foreach ($barang as $br => $data)

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\SupplierExport;
 use App\Models\Supplier;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use Maatwebsite\Excel\Facades\Excel;
 use RealRashid\SweetAlert\Facades\Alert;
 use PDF;
 
@@ -160,5 +162,10 @@ class SupplierController extends Controller
         $supplier = Supplier::all();
         $pdf = PDF::loadview('Supplier.laporan', compact('supplier'));
         return $pdf->stream();
+    }
+
+    public function laporanExcel(Request $request)
+    {
+        return Excel::download(new SupplierExport, 'Supplier.xlsx');
     }
 }
