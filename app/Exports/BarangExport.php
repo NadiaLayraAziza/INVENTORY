@@ -28,7 +28,6 @@ class BarangExport implements FromCollection,WithHeadings
             'Harga',
             'Bahan',
             'Tanggal Input',
-            'Nama Kategori',
             'Id Kategori',
             'Id Supplier',
             'Created_at',
