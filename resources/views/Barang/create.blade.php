@@ -65,16 +65,40 @@
                 </div>
             </div>
 		</div>
+        <div class="form-group row">
+			<label for="merk_barang" class="col-sm-12 col-md-2 col-form-label text-white">Merk Barang</label>
+			<div class="col-sm-12 col-md-10">
+				<input class="form-control" type="text" name="merk_barang" id="merk_barang" aria-describedby="merk_barang" placeholder="">
+			</div>
+		</div>
+        <div class="form-group row">
+			<label for="bahan" class="col-sm-12 col-md-2 col-form-label text-white">Bahan</label>
+			<div class="col-sm-12 col-md-10">
+				<input class="form-control" type="text" name="bahan" id="bahan" aria-describedby="bahan" placeholder="">
+			</div>
+		</div>
 		<div class="form-group row">
 			<label for="jumlah_barang" class="col-sm-12 col-md-2 col-form-label text-white">Jumlah</label>
 			<div class="col-sm-12 col-md-10">
-				<input class="form-control" type="text" name="jumlah_barang" id="jumlah_barang" aria-describedby="jumlah_barang" placeholder="">
+				<input class="form-control" type="number" name="jumlah_barang" id="jumlah_barang" aria-describedby="jumlah_barang" placeholder="">
+			</div>
+		</div>
+        <div class="form-group row">
+			<label for="harga" class="col-sm-12 col-md-2 col-form-label text-white">Harga Satuan</label>
+			<div class="col-sm-12 col-md-10">
+				<input class="form-control" type="number" name="harga" id="harga" aria-describedby="harga" placeholder="">
+			</div>
+		</div>
+        <div class="form-group row">
+			<label for="tgl_input" class="col-sm-12 col-md-2 col-form-label text-white">Tanggal Beli</label>
+			<div class="col-sm-12 col-md-10">
+				<input class="form-control" type="date" name="tgl_input" id="tgl_input" value="{{ date('Y-m-d', strtotime(Carbon\Carbon::today()->toDateString())) }}" aria-describedby="tgl_input" placeholder="">
 			</div>
 		</div>
         <div class="form-group row">
 			<label for="gambar" class="col-sm-12 col-md-2 col-form-label text-white">Gambar</label>
 			<div class="col-sm-12 col-md-10">
-				<input class="form-control" type="file" name="gambar" id="gambar" aria-describedby="gambar" placeholder=""></br>
+				<input class="form-control" type="file" name="gambar" id="gambar" aria-describedby="gambar" placeholder=""><br>
 			</div>
 		</div>
 		<div class="form-group row">

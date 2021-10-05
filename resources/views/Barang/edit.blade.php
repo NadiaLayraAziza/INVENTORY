@@ -66,10 +66,34 @@
                 </div>
             </div>
 		</div>
+        <div class="form-group row">
+			<label for="merk_barang" class="col-sm-12 col-md-2 col-form-label text-white">Merk Barang</label>
+			<div class="col-sm-12 col-md-10">
+				<input class="form-control" type="text" name="merk_barang" id="merk_barang" value="{{ $barang->merk_barang }}" aria-describedby="merk_barang" placeholder="">
+			</div>
+		</div>
+        <div class="form-group row">
+			<label for="bahan" class="col-sm-12 col-md-2 col-form-label text-white">Bahan</label>
+			<div class="col-sm-12 col-md-10">
+				<input class="form-control" type="text" name="bahan" id="bahan" value="{{ $barang->bahan }}" aria-describedby="bahan" placeholder="">
+			</div>
+		</div>
 		<div class="form-group row">
 			<label for="jumlah_barang" class="col-sm-12 col-md-2 col-form-label text-white">Jumlah</label>
 			<div class="col-sm-12 col-md-10">
-				<input class="form-control" type="text" name="jumlah_barang" id="jumlah_barang" value="{{ $barang->jumlah_barang }}" aria-describedby="jumlah_barang" placeholder="">
+				<input class="form-control" type="number" name="jumlah_barang" id="jumlah_barang" value="{{ $barang->jumlah_barang }}" aria-describedby="jumlah_barang" placeholder="">
+			</div>
+		</div>
+        <div class="form-group row">
+			<label for="harga" class="col-sm-12 col-md-2 col-form-label text-white">Harga Satuan</label>
+			<div class="col-sm-12 col-md-10">
+				<input class="form-control" type="number" name="harga" id="harga" value="{{ $barang->harga }}" aria-describedby="harga" placeholder="">
+			</div>
+		</div>
+        <div class="form-group row">
+			<label for="tgl_input" class="col-sm-12 col-md-2 col-form-label text-white">Tanggal Beli</label>
+			<div class="col-sm-12 col-md-10">
+				<input class="form-control" type="date" name="tgl_input" id="tgl_input" value="{{ $barang->tgl_input }}" aria-describedby="tgl_input" placeholder="">
 			</div>
 		</div>
         <div class="form-group row">

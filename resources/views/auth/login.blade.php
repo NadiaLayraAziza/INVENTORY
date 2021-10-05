@@ -36,6 +36,11 @@
 			<div class="brand-logo">
 				<img src="{{asset('templete/vendors/images/logo-login.PNG')}}" alt="">
 			</div>
+            <div class="login-menu">
+				<ul>
+					<li><a href="{{ route('register') }}">Register</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 	<div class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
@@ -93,6 +98,10 @@
 											<input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
 										 --}}
 										<button class="btn btn-primary btn-lg btn-block" type="submit">Sign In</button>
+									</div>
+                                    <div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">OR</div>
+									<div class="input-group mb-0">
+										<a class="btn btn-outline-primary btn-lg btn-block" href="{{ route('register') }}">Register To Create Account</a>
 									</div>
 								</div>
 							</div>

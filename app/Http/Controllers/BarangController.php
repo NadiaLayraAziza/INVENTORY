@@ -80,6 +80,10 @@ class BarangController extends Controller
             'jumlah_barang' => 'required',
             'id_kategori' => 'required',
             'id_supplier' => 'required',
+            'merk_barang' => 'required',
+            'bahan' => 'required',
+            'harga' => 'required',
+            'tgl_input' => 'required',
             ]);
 
             if ($request->file('gambar')) {
@@ -94,6 +98,10 @@ class BarangController extends Controller
             $barang->nama_barang = $request->get('nama_barang');
             $barang->gambar = $image_name;
             $barang->jumlah_barang = $request->get('jumlah_barang');
+            $barang->merk_barang = $request->get('merk_barang');
+            $barang->bahan = $request->get('bahan');
+            $barang->harga = $request->get('harga');
+            $barang->tgl_input = $request->get('tgl_input');
 
             //fungsi eloquent untuk menambah data dengan relasi belongsTo
             $barang->kategori()->associate($kategori);
@@ -158,11 +166,15 @@ class BarangController extends Controller
         }
 
         $request->validate([
-            'kode_barang' => 'required',
-            'nama_barang' => 'required',
+            'kode_barang'   => 'required',
+            'nama_barang'   => 'required',
             'jumlah_barang' => 'required',
-            'id_kategori' => 'required',
-            'id_supplier' => 'required',
+            'id_kategori'   => 'required',
+            'id_supplier'   => 'required',
+            'merk_barang'   => 'required',
+            'bahan'         => 'required',
+            'harga'         => 'required',
+            'tgl_input'     => 'required',
         ]);
 
         $barang = Barang::with('kategori', 'supplier')->where('id', $id)->first();
@@ -171,6 +183,10 @@ class BarangController extends Controller
             $barang->kode_barang = $request->get('kode_barang');
             $barang->nama_barang = $request->get('nama_barang');
             $barang->jumlah_barang = $request->get('jumlah_barang');
+            $barang->merk_barang = $request->get('merk_barang');
+            $barang->bahan = $request->get('bahan');
+            $barang->harga = $request->get('harga');
+            $barang->tgl_input = $request->get('tgl_input');
 
             $kategori = Kategori::find($request->get('id_kategori'));
             $supplier = Supplier::find($request->get('id_supplier'));
@@ -189,6 +205,10 @@ class BarangController extends Controller
             $barang->kode_barang = $request->get('kode_barang');
             $barang->nama_barang = $request->get('nama_barang');
             $barang->jumlah_barang = $request->get('jumlah_barang');
+            $barang->merk_barang = $request->get('merk_barang');
+            $barang->bahan = $request->get('bahan');
+            $barang->harga = $request->get('harga');
+            $barang->tgl_input = $request->get('tgl_input');
 
             $kategori = Kategori::find($request->get('id_kategori'));
             $supplier = Supplier::find($request->get('id_supplier'));

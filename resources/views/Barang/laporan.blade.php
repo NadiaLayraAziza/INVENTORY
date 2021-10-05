@@ -38,7 +38,9 @@
                         <td>{{ $data->kode_barang }}</td>
                         <td>{{ $data->kategori->nama_kategori }}</td>
                         <td>{{ $data->nama_barang }}</td>
+                        <td>{{ $data->merk_barang }}</td>
                         <td>{{ $data->jumlah_barang }}</td>
+                        <td>{{ $data->harga }}</td>
                         <td>{{ $data->supplier->nama }}</td>
                     </tr>
                     @endforeach
