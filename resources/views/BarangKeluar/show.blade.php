@@ -77,6 +77,13 @@
                 </div>
             </div>
         </div>
+        <br>
+        <div class="text-center">
+            <a href="{{route('BarangKeluar.index')}}" type="button" class="btn btn-lg btn-block" data-bgcolor="rgb(40 94 138)" data-color="#ffffff">
+                <i class="icon-copy fa fa-arrow-left" aria-hidden="true"></i>
+                Kembali
+            </a>
+        </div>
     </div>
 </div>
 @endsection
